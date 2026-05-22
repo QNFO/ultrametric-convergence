@@ -1,60 +1,77 @@
 # PROJECT CHARTER — Ultrametric Convergence Explorer
 
-## Project Identity
+## 1. PROJECT IDENTITY
 
 | Field | Value |
 |:------|:------|
-| **Project Name** | ultrametric-convergence-explorer |
+| **Project Name** | `ultrametric-convergence-explorer` |
 | **Title** | Ultrametric Convergence Explorer |
 | **Type** | QWAV Spinoff — Interactive Artifact (D13) |
+| **QWAV Strategy Reference** | `strategy/3.0.md` — Build Gravity, Tier 1 Artifact A3 |
 | **Created** | 2026-05-22 |
-| **Deployed** | 2026-05-23 |
-| **Live URL** | https://qnfo.github.io/ultrametric-convergence/ |
-| **Repository** | QNFO/ultrametric-convergence |
+| **Repository** | `QNFO/ultrametric-convergence` |
+| **Live Target** | `https://qnfo.github.io/ultrametric-convergence/` |
 | **Parent Program** | QWAV — Ultrametric Quantum Computing & AI |
 
-## Purpose & Thesis
+## 2. RAISON D'ÊTRE — QWAV STRATEGY NEXUS
 
-Side-by-side ultrametric vs Euclidean particle simulation. Demonstrates inevitable clustering in ultrametric space vs random-walk in Euclidean space.
+**This project exists because the claim that ultrametric geometry forces convergence needs visual, side-by-side proof against Euclidean geometry.**
 
-## Technical Approach
+The Convergence-Consilience publication (DOI: `10.5281/zenodo.20302276`) argues that upward-monotonic dynamics are inevitable in ultrametric spaces — diversity collapses into uniformity not by design but because the geometry makes convergence inevitable. This is a mathematical claim about dynamics that is best demonstrated visually: show particles under the same rules in ultrametric vs Euclidean space and let the viewer see the difference.
 
-Single HTML file, vanilla JavaScript, dual Canvas. No dependencies.
+**Strategic contribution:**
+- Provides the "convergence" pillar for the broader ultrametricity thesis (error confinement + glass-box AI + convergence)
+- Side-by-side comparison is intuitively compelling — no math required to see the difference
+- Connects to the Convergence-Consilience publication for those who want the formal treatment
+- Demonstrates that ultrametricity is a general phenomenon, not just a quantum computing trick
 
-## User Interaction
+**Without this project, the convergence claim is purely textual.** The side-by-side comparison makes it visceral.
 
-2 buttons. Dual-pane Canvas: left = ultrametric convergence, right = Euclidean random walk.
+## 3. SCOPE
 
-## Evidence Contribution
+### In Scope
+- Two side-by-side HTML5 Canvases: ultrametric (left) and Euclidean (right)
+- Particle simulation with identical rules on both sides
+- Adjustable parameters: tree depth, particle count, step speed
+- Animation with play/pause/step controls
+- Clear labeling and explanation of what each side shows
+- Convergence metric display (how "clustered" are the particles on each side?)
 
-Ultrametric particles cluster deterministically. Euclidean particles never converge. Visual proof of topological difference.
+### Out of Scope
+- Physical simulation of real quantum systems
+- High-performance GPU rendering (CPU Canvas is sufficient for 200 particles)
+- Mathematical proofs (link to the paper for those)
 
-## Success Criteria
+## 4. DELIVERABLES
 
-1. Interactive elements respond to user input (verified by automated canvas check)
-2. Deployed and loading at https://qnfo.github.io/ultrametric-convergence/
-3. JavaScript executes without console errors
-4. Cross-linked from QWAV Technical Site Hub
-5. Demonstrates a specific, published QWAV result
+| # | Deliverable | Acceptance Criteria | Status |
+|:--|:------------|:--------------------|:------|
+| D1 | Dual canvas rendering | Both canvases render with correct labels | PROTOTYPE |
+| D2 | Particle simulation | Particles move under identical rules on both sides | PROTOTYPE |
+| D3 | Animation controls | Play/pause/step/reset work correctly | PROTOTYPE |
+| D4 | Convergence metric | Measurable clustering difference between ultrametric and Euclidean sides | NOT BUILT |
+| D5 | Explanation overlay | Text explaining what the viewer sees and why it matters | NOT BUILT |
+| D6 | Test suite | Automated verification of tree construction, particle behavior, convergence metrics | NOT BUILT |
+| D7 | Deployment | Live on GitHub Pages | DONE |
 
-## Constraints
+## 5. SUCCESS CRITERIA
 
-- Zero external dependencies (no CDN, no npm)
-- Single HTML file (inline CSS/JS)
-- GitHub Pages deployment (no server)
-- MIT licensed or equivalent open-source
+1. **Visible difference:** Within 100 animation steps, the ultrametric side shows visibly more clustering than the Euclidean side
+2. **Quantifiable convergence:** A numerical metric (e.g., mean pairwise distance) shows statistically significant difference between sides
+3. **Educational clarity:** A visitor understands "ultrametric geometry makes things converge" within 30 seconds
 
-## Relationship to QWAV Program
+## 6. CURRENT STATUS (2026-05-23)
 
-This project is one of 5 interactive artifacts (D13) that make QWAV's computational evidence tangible. Each demo demonstrates one key result:
-- Error Confinement → strong triangle inequality visualization
-- Q-PNA Playground → glass-box AI decision trees
-- Convergence Explorer → ultrametric vs Euclidean comparison
-- Tree Distance Sandbox → cophenetic distance computation
-- Hardware Visualizer → neutral atom hardware mapping
+**Phase:** PROTOTYPE — Functional but minimal
 
-Together, these 5 demos + the Technical Site Hub + the Virtual Qubit Showdown form the complete QWAV Gravity Portfolio.
+**What exists:** A single `index.html` (7 KB, 131 lines JS) with dual canvases, particle simulation, and `requestAnimationFrame` loop. Particles move. Animation runs.
+
+**What's missing:**
+- **No convergence metric.** Particles move but there's no quantitative measurement of clustering.
+- **No explanation.** What is the viewer supposed to notice?
+- **No test suite.** No verification that convergence behavior is correct.
+- **Minimal parameter controls.** Sliders exist but parameters are limited.
 
 ---
 
-*Project charter established 2026-05-22. Project completed 2026-05-23.*
+*Updated: 2026-05-23 | QWAV Strategy: Build Gravity v3.0 | Artifact: Tier 1 — A3*

@@ -1,68 +1,75 @@
 # DEFINITION OF DONE — Ultrametric Convergence Explorer
 
-## What Does "Done" Mean for This Project?
+## What "Done" Means
 
-This project is **complete** when ALL of the following are true:
-
-### Functional Completeness
-- [x] Interactive elements respond to user input (tested: slider movement → canvas redraw)
-- [x] Canvas renders non-zero content at all default parameter settings
-- [x] JavaScript executes without console errors
-- [x] All buttons, sliders, and interactive controls are wired to event handlers
-- [x] Default state is visually meaningful (not blank, not broken)
-
-### Deployment Completeness
-- [x] Pushed to GitHub under QNFO organization (QNFO/ultrametric-convergence)
-- [x] GitHub Pages enabled, serving from correct branch
-- [x] Live URL verified loading: https://qnfo.github.io/ultrametric-convergence/
-- [x] .nojekyll present (prevents Jekyll processing)
-
-### Documentation Completeness
-- [x] README.md describes what the demo shows and how to use it
-- [x] PROJECT STATE.md records deployment status and URL
-- [x] SPRINT.md tracks all tasks as complete
-- [x] CHANGELOG.md documents version history
-- [x] BACKLOG.md captures deferred enhancements
-- [x] LEARNINGS.md records project-specific lessons
-- [x] DECISIONS.md logs architecture decisions
-- [x] DEFINITION-OF-DONE.md (this file)
-
-### Integration Completeness
-- [x] Cross-linked from QWAV Technical Site Hub (https://qnfo.github.io/QWAV/)
-- [x] Links to relevant published papers where applicable
-- [x] Part of the QWAV D13 interactive artifact set (5 demos)
-
-### Verification Checklist (last verified: 2026-05-23)
-- [x] Canvas.getImageData() → non-zero pixels
-- [x] Slider input event → canvas redraw
-- [x] No JavaScript console errors
-- [x] Mobile responsive (viewport meta, flexible layout)
-- [x] All external links functional
-
-### Archive Cross-Reference
-
-This demo visualizes the ultrametric convergence property computationally verified by:
-- **Computational-Ultrametricity** (Archive 2026/05) — formal verification pipeline (ultrametric.py, 20 files). Validated 649 triples all ultrametric.
-- **The Tree Is Real** (Archive 2026/05 → DOI: 10.5281/zenodo.20325850) — published paper documenting the 649-triple validation
-- **Tree Distance Cophenetic** (Archive 2026/05 → DOI: 10.5281/zenodo.20213043) — mathematical formalization of cophenetic distance
-
-The deterministic clustering visualized here is the same phenomenon computationally proven in The Tree Is Real: in ultrametric space, particles inevitably cluster because of the strong triangle inequality.
-
-## What Is Explicitly OUT of Scope
-
-- Production-grade accessibility (WCAG AA)
-- Multi-language i18n
-- Automated testing suite (unit/integration)
-- Performance optimization beyond basic usability
-- Analytics or tracking
-- Backend or server-side logic
-- CDN dependencies
-
-## Completion Status
-
-**ALL criteria met. Project is DONE.** ✅
-Deployed: 2026-05-23. Verified: 2026-05-23. 6 of 6 tasks complete.
+This project is **done** when a side-by-side comparison shows measurable, statistically significant convergence differences between ultrametric and Euclidean particle dynamics within 30 seconds of animation.
 
 ---
 
-*This DoD is the contract between the project and the QWAV program. When all boxes are checked, the project is closed out.*
+## GATE 1: FUNCTIONAL COMPLETENESS
+
+| # | Requirement | Test | Status |
+|:--|:-----------|:-----|:------|
+| F1 | Dual canvases render with correct labels ("Ultrametric Tree" / "Euclidean Plane") | Visual inspection | ❌ UNTESTED |
+| F2 | Particles move under identical rules on both sides | Side-by-side frame capture comparison at step 0, 50, 100 | ❌ UNTESTED |
+| F3 | Play/pause/step/reset controls functional | Manual test: each button produces expected behavior | ❌ UNTESTED |
+| F4 | **Convergence metric displayed** — mean pairwise distance or cluster count, updated in real time | Measured difference between sides: ultrametric distance < Euclidean distance by step 100 | ❌ NOT BUILT |
+| F5 | Tree depth slider changes convergence rate (deeper tree → faster convergence) | Test: d=2 vs d=5, convergence metric at step 100 | ❌ UNTESTED |
+| F6 | Particle count slider works (50–500 particles) | Test: N=50 and N=500 both render without performance degradation | ❌ UNTESTED |
+| F7 | Explanation overlay or info panel | Reader test: 3/3 readers correctly explain what the demo shows | ❌ NOT BUILT |
+| F8 | Default state is visually meaningful | Screenshot: both canvases show particles in initial positions | ❌ UNTESTED |
+
+## GATE 2: TEST EXECUTION
+
+### Test Suite 1: Particle Simulation Correctness
+```
+File: test_plan.py
+Test: For N=200, d=5, steps=100:
+  1. Capture particle positions at steps 0, 50, 100 on both sides
+  2. Verify ultrametric mean pairwise distance < Euclidean at step 100
+  3. Verify ultrametric convergence rate > Euclidean convergence rate
+Status: NOT YET WRITTEN
+```
+
+### Test Suite 2: Tree Construction
+```
+Verify: Leaves are correctly positioned for p=3, d={2,3,4,5}
+Status: NOT YET WRITTEN
+```
+
+### Test Suite 3: Performance
+```
+Test: N=500 particles, 60fps maintained
+Status: NOT YET EXECUTED
+```
+
+## GATE 3: DEPLOYMENT — Same as A1
+
+## GATE 4: QWAV INTEGRATION
+
+| # | Requirement | Status |
+|:--|:-----------|:------|
+| I1 | Linked from Technical Hub | ✅ DONE |
+| I2 | Back-link to Hub | ❌ NOT BUILT |
+| I3 | Cross-links to A1 and A4 | ❌ NOT BUILT |
+| I4 | References Convergence-Consilience DOI (`10.5281/zenodo.20302276`) | ❌ NOT BUILT |
+
+## GATE 5: DOCUMENTATION — Same standards as A1
+
+---
+
+## CURRENT STATUS vs DONE
+
+| Gate | Requirements | Met | Status |
+|:-----|:------------|:---|:------|
+| GATE 1 | Functional (8 items) | 0/8 | 🔴 UNTESTED |
+| GATE 2 | Test Execution (3 suites) | 0/3 | 🔴 NO TESTS |
+| GATE 3 | Deployment | 4/6 | 🟡 URL loads |
+| GATE 4 | QWAV Integration (4 items) | 1/4 | 🔴 BLOCKED |
+| GATE 5 | Documentation | 1/4 | 🔴 BLOCKED |
+
+**OVERALL:** 6/25 requirements met (24%). **Prototype — needs convergence metric, explanation, and tests.**
+
+---
+
+*Updated: 2026-05-23*
