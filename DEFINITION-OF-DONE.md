@@ -39,6 +39,15 @@ This project is **complete** when ALL of the following are true:
 - [x] Mobile responsive (viewport meta, flexible layout)
 - [x] All external links functional
 
+### Archive Cross-Reference
+
+This demo visualizes the ultrametric convergence property computationally verified by:
+- **Computational-Ultrametricity** (Archive 2026/05) — formal verification pipeline (ultrametric.py, 20 files). Validated 649 triples all ultrametric.
+- **The Tree Is Real** (Archive 2026/05 → DOI: 10.5281/zenodo.20325850) — published paper documenting the 649-triple validation
+- **Tree Distance Cophenetic** (Archive 2026/05 → DOI: 10.5281/zenodo.20213043) — mathematical formalization of cophenetic distance
+
+The deterministic clustering visualized here is the same phenomenon computationally proven in The Tree Is Real: in ultrametric space, particles inevitably cluster because of the strong triangle inequality.
+
 ## What Is Explicitly OUT of Scope
 
 - Production-grade accessibility (WCAG AA)
