@@ -178,7 +178,7 @@ function togglePlay(){
   running=true;
   document.getElementById('playBtn').textContent='Pause';
   document.getElementById('playBtn').classList.add('running');
-  function loop(){if(!running)return;stepSimulation();animId=requestAnimationFrame(loop)}
+  function loop(){if(!running)return;stepSimulation();updateDisplays();animId=requestAnimationFrame(loop)}
   loop();
  }
 }
