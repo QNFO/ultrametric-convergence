@@ -77,7 +77,7 @@ function buildTreeLeaves(d){
 
 function commonAncestorDepth(a,b){
  const grid=Math.pow(3,treeDepth);
- const cellsPerLeaf=grid/leaves.length;
+ const cellsPerLeaf=grid/treeLeaves.length;
  let ia=Math.floor(a.x/10),ib=Math.floor(b.x/10);
  if(ia===ib)return 0;
  let mask=grid,d=0;
